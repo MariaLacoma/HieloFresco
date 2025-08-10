@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header class="bg-light">
+        <nav class="navbar navbar-expand-lg"> 
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/img/logo.png" alt="logo" class="logo">
+                </a>
+
+                <!-- Botón hamburguesa -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" 
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menú offcanvas -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                     aria-labelledby="offcanvasNavbarLabel">
+                    
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENU</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" 
+                                aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">INICIO</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./Productos.html">PRODUCTOS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./Servicios.html">SERVICIOS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./Galeria.html">GALERÍA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./Contacto.html">CONTACTO</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <h1 class="text-center mb-5">Nuestros <span class="text-primary">Servicios</span></h1>
+            
+            <div class="row g-4 justify-content-center">
+               
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img class="card-img-top" src="../assets/img/Ice-Free-Download-PNG.png" 
+                             alt="Tipos de hielo" style="height: 200px; object-fit: contain; padding: 20px;">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Tipos de Hielo</h3>
+                            <p class="card-text">Cubos, triturado, barras y más variedades para todos tus eventos y necesidades.</p>
+                        </div>
+                    </div>
+                </div>
+              
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img class="card-img-top" src="../assets/img/home-delivery-icon-on-white-vector.jpg" 
+                             alt="Delivery" style="height: 200px; object-fit: contain; padding: 20px;">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Entrega a Domicilio</h3>
+                            <p class="card-text">Llevamos el hielo hasta la puerta de tu casa o negocio de forma rápida y segura.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img class="card-img-top" src="../assets/img/juntar_hielo.jpg" 
+                             alt="Hielo a granel" style="height: 200px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Venta a Granel</h3>
+                            <p class="card-text">Suministro de grandes cantidades para eventos, empresas y celebraciones especiales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
