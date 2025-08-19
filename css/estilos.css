@@ -1,0 +1,338 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+footer .footerRedes a i {
+  font-size: 30px;
+  text-decoration: none;
+}
+footer .footerRedes a i:hover {
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+}
+
+/* RESET Y ESTILOS GLOBALES */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ESTILOS DE TIPOGRAFÍA  */
+h1 {
+  color: blue;
+}
+
+#idH1 {
+  color: black;
+}
+
+.claseH1 {
+  color: olive;
+}
+
+/*  ENLACES  */
+a {
+  text-decoration: none;
+  color: rgb(221, 111, 206);
+}
+
+li > a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+
+li > a:hover {
+  text-decoration: underline;
+}
+
+/* Efecto subrayado animado */
+.subrayado {
+  position: relative;
+  display: inline-block;
+}
+
+.subrayado::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  bottom: -2px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.subrayado:hover::after {
+  width: 100%;
+}
+
+header {
+  /*display: flex;
+  justify-content: space-between;
+  align-items: center;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 5px;
+  z-index: 100;
+  background-color: #f0f0f0;
+}
+header .logo {
+  width: 100px;
+  height: auto;
+}
+header nav {
+  width: 100%;
+}
+header nav.mobile {
+  display: none;
+}
+header nav ul {
+  /*display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: aliceblue;
+}
+
+main {
+  text-align: center;
+}
+main#fondoPrincipal {
+  background-color: whitesmoke;
+}
+main#fondoPrincipal .hielos {
+  color: black;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500;
+}
+main#fondoPrincipal .heroSection {
+  background-image: url(../assets/img/Bolsa\ hielo\ fresco.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100px;
+  padding: 145px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+main#fondoPrincipal .heroSection .heroTxt {
+  background-color: blanchedalmond;
+}
+
+section.productos .intro {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+section.productos .intro .introText {
+  width: 40%;
+}
+
+section.productos .intro .introText h2 {
+  text-align: center;
+}
+
+section.productos .intro .imagen {
+  width: 40%;
+}
+
+/*  SECCIÓN BENEFICIOS  */
+section.beneficios {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+  text-align: left;
+}
+
+section.beneficios ul {
+  list-style: none;
+  padding: 0;
+  font-size: 10px;
+}
+
+section.beneficios li {
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+section.beneficios > img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.texto-beneficio {
+  max-width: 600px;
+}
+
+.titulo-beneficio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.titulo-beneficio h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.icono-beneficio {
+  width: 20px;
+  height: auto;
+}
+
+/*  GRID DE PRODUCTOS   */
+.gridArea {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "Bolsa_Hielo Hielo_Luz Hielo_Rolito" "Vaso_Hielo Copa_Hielo Hielos_Corazon";
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  gap: 10px;
+  position: relative;
+  background-color: rgb(248, 231, 231);
+  padding: 10px;
+  /* Grid Areas */
+}
+.gridArea img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+.gridArea .BolsaHielo {
+  grid-area: Bolsa_Hielo;
+}
+.gridArea .HieloRolito {
+  grid-area: Hielo_Rolito;
+}
+.gridArea .VasoHielo {
+  grid-area: Vaso_Hielo;
+}
+.gridArea .CopaHielo {
+  grid-area: Copa_Hielo;
+}
+.gridArea .HielosCorazon {
+  grid-area: Hielos_Corazon;
+}
+.gridArea .HieloLuz {
+  grid-area: Hielo_Luz;
+}
+
+/*  FOOTER  */
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+footer .footerRedes a {
+  margin: 0 15px;
+  transition: transform 0.3s ease;
+}
+footer .footerRedes a:hover {
+  transform: scale(1.1);
+}
+footer .footerRedes a i.fa-facebook {
+  color: #1877F2;
+}
+footer .footerRedes a i.fa-instagram {
+  color: #E1306C;
+}
+footer .footerRedes a i.fa-whatsapp {
+  color: #25D366;
+}
+
+/*  BOTÓN FLOTANTE WHATSAPP  */
+.whatsapp-float {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.whatsapp-float:hover {
+  background-color: #128c7e;
+  color: white;
+  transform: scale(1.1);
+  text-decoration: none;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+@media screen and (max-width: 768px) {
+  /* Navegación móvil */
+  header nav.desktop {
+    display: none;
+  }
+  header nav.mobile {
+    display: block;
+    text-align: center;
+  }
+  /* Footer móvil */
+  footer .footerMenu {
+    display: none;
+  }
+  /* WhatsApp móvil */
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+  }
+  /* Grid móvil */
+  .gridArea {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "Bolsa_Hielo" "Hielo_Luz" "Hielo_Rolito" "Vaso_Hielo" "Copa_Hielo" "Hielos_Corazon";
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+/*# sourceMappingURL=estilos.css.map */
