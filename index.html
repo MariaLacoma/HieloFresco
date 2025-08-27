@@ -1,59 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hielo Fresco - Inicio</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!--<link rel="stylesheet" href="./css/styles.css"> -->
-
+    
     <link rel="stylesheet" href="./css/estilos.css">
 </head>
 
 <body>
-    <header>
-        <img class="logo" src=./assets/img/logo.png alt="Logo Hielo Fresco">
-        <nav>
-            <ul>
-                <li><a class="active subrayado" aria-current="page" href="index.html">INICIO</a></li>
-                <li><a class="subrayado" href="./pages/Productos.html">PRODUCTOS</a></li>
-                <li><a class="subrayado" href="./pages/Servicios.html">SERVICIOS</a></li>
-                <li><a class="subrayado" href="./pages/Galeria.html">GALERÍA</a></li>
-                <li><a class="subrayado" href="./pages/Contacto.html">CONTACTO</a></li>
-            </ul>
+    
+    <header class="bg-light shadow-sm sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light"> 
+            <div class="container">
+               
+                <a class="navbar-brand" href="index.html">
+                    <img src="./assets/img/logo.png" alt="Logo Hielo Fresco" class="logo" style="height: 100px;">
+                </a>
+
+                <!-- Botón hamburguesa -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" 
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menú offcanvas -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                     aria-labelledby="offcanvasNavbarLabel">
+                    
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENÚ</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" 
+                                aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active fw-bold" aria-current="page" href="index.html">INICIO</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./pages/Productos.html">PRODUCTOS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./pages/Servicios.html">SERVICIOS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./pages/Galeria.html">GALERÍA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./pages/Contacto.html">CONTACTO</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
+    
     <main id="fondoPrincipal">
-        <section class="heroSection">
-            <h1 class="claseH1 hielos" id="idh1">Hielo Fresco</h1>
-            <p class="heroTxt">¡Hielo Fresco! Congelamos tus momentos</p>
+        <section class="heroSection position-relative d-flex align-items-center justify-content-center text-white" 
+                 style="background-image: url('./assets/img/Bolsa\ hielo\ fresco.jpg'); 
+                        background-size: cover; 
+                        background-position: center; 
+                        background-attachment: fixed; 
+                        min-height: 80vh;">
+            
+            
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+            
+           
+            <div class="container position-relative z-1 text-center py-5">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <h1 class="display-1 fw-bold mb-4 text-shadow" style="color: rgb(0, 85, 128);">
+                            Hielo Fresco
+                        </h1>
+                        <p class="lead fs-3 px-3 py-2 rounded d-inline-block" 
+                           style="background-color: rgba(255, 235, 205, 0.9); color: #333;">
+                            ¡Hielo Fresco! Congelamos tus momentos
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="h3 mb-4">Bienvenido a Hielo Fresco</h2>
+                        <p class="lead">Ofrecemos hielo de la más alta calidad para todos tus eventos y necesidades.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footerRedes">
-            <a href="https://www.facebook.com/marianelaa.muller/" target="_blank">
-                <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/marianelaa.muller/" target="_blank">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://api.whatsapp.com/send?phone=5491134746042" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="footerRedes">
+                        <a href="https://www.facebook.com/" 
+                           target="_blank" 
+                           class="text-decoration-none me-4 d-inline-block">
+                            <i class="fa-brands fa-facebook fs-2 text-primary"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" 
+                           target="_blank" 
+                           class="text-decoration-none me-4 d-inline-block">
+                            <i class="fa-brands fa-instagram fs-2" style="color: #E1306C;"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=" 
+                           target="_blank" 
+                           class="text-decoration-none d-inline-block">
+                            <i class="fa-brands fa-whatsapp fs-2" style="color: #25D366;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <a href="https://api.whatsapp.com/send?phone=5492975377808&text=Hola,%20me%20interesa%20información%20sobre%20Hielo%20Fresco"
-        class="whatsapp-float" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
     
+    <a href="https://api.whatsapp.com/send?phone=5492975377808&text=Hola,%20me%20interesa%20información%20sobre%20Hielo%20Fresco"
+       class="position-fixed bottom-0 end-0 m-4 btn btn-success rounded-circle d-flex align-items-center justify-content-center shadow-lg"
+       target="_blank"
+       style="width: 60px; height: 60px; z-index: 1050;">
+        <i class="fa-brands fa-whatsapp fs-3"></i>
+    </a>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
