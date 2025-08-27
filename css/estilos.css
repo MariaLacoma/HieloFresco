@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 footer .footerRedes a i {
   font-size: 30px;
   text-decoration: none;
@@ -8,7 +9,7 @@ footer .footerRedes a i:hover {
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
 }
 
-/* RESET Y ESTILOS GLOBALES */
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +19,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* ESTILOS DE TIPOGRAFÍA  */
+
 h1 {
   color: blue;
 }
@@ -31,7 +32,6 @@ h1 {
   color: olive;
 }
 
-/*  ENLACES  */
 a {
   text-decoration: none;
   color: rgb(221, 111, 206);
@@ -47,7 +47,7 @@ li > a:hover {
   text-decoration: underline;
 }
 
-/* Efecto subrayado animado */
+
 .subrayado {
   position: relative;
   display: inline-block;
@@ -156,7 +156,7 @@ section.productos .intro .imagen {
   width: 40%;
 }
 
-/*  SECCIÓN BENEFICIOS  */
+
 section.beneficios {
   display: flex;
   align-items: center;
@@ -204,7 +204,7 @@ section.beneficios > img {
   height: auto;
 }
 
-/*  GRID DE PRODUCTOS   */
+
 .gridArea {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -217,7 +217,7 @@ section.beneficios > img {
   position: relative;
   background-color: rgb(248, 231, 231);
   padding: 10px;
-  /* Grid Areas */
+ 
 }
 .gridArea img {
   object-fit: cover;
@@ -244,7 +244,7 @@ section.beneficios > img {
   grid-area: Hielo_Luz;
 }
 
-/*  FOOTER  */
+
 footer {
   padding: 20px;
   text-align: center;
@@ -267,7 +267,7 @@ footer .footerRedes a i.fa-whatsapp {
   color: #25D366;
 }
 
-/*  BOTÓN FLOTANTE WHATSAPP  */
+
 .whatsapp-float {
   position: fixed;
   width: 40px;
@@ -305,7 +305,7 @@ footer .footerRedes a i.fa-whatsapp {
   }
 }
 @media screen and (max-width: 768px) {
-  /* Navegación móvil */
+  
   header nav.desktop {
     display: none;
   }
@@ -313,11 +313,11 @@ footer .footerRedes a i.fa-whatsapp {
     display: block;
     text-align: center;
   }
-  /* Footer móvil */
+  
   footer .footerMenu {
     display: none;
   }
-  /* WhatsApp móvil */
+  
   .whatsapp-float {
     bottom: 20px;
     right: 20px;
@@ -325,7 +325,7 @@ footer .footerRedes a i.fa-whatsapp {
     height: 50px;
     font-size: 25px;
   }
-  /* Grid móvil */
+  
   .gridArea {
     grid-template-columns: auto;
     grid-template-rows: auto;
