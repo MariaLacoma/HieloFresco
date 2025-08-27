@@ -1,426 +1,314 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 
-
-// VARIABLES 
-
-$tipografia-ppal: "Poppins", sans-serif;
-$tipografia-secound: "Roboto", sans-serif;
-
-//MIXIN
-
-@mixin miFlex ($direccion, $justify, $align) {
-
-    display: flex;
-    flex-direction: $direccion;
-    justify-content: $justify;
-    align-items: $align;
-}
-
-//EXTEND
-
-%icono-red {
-    font-size: 30px;
-    text-decoration: none;
-
-     &:hover {
-        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
-        // desplazamiento o transform si quieres añadir algo más
-    }
-
-}
-
-
-
-/* RESET Y ESTILOS GLOBALES */
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: $tipografia-ppal;
-}
-
-/* ESTILOS DE TIPOGRAFÍA  */
-h1 {
-    color: blue;
-}
-
-#idH1 {
-    color: black;
-}
-
-.claseH1 {
-    color: olive;
-}
-
-/*  ENLACES  */
-a {
-    text-decoration: none;
-    color: rgb(221, 111, 206);
-}
-
-li>a {
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
-}
-
-li>a:hover {
-    text-decoration: underline;
-}
-
-/* Efecto subrayado animado */
-.subrayado {
-    position: relative;
-    display: inline-block;
-}
-
-.subrayado::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: red;
-    bottom: -2px;
-    left: 0;
-    transition: width 0.3s ease;
-}
-
-.subrayado:hover::after {
-    width: 100%;
-}
-
-header {
-
-    /*display: flex;
-    justify-content: space-between;
-    align-items: center;*/
-    @include miFlex(row, space-between, center);
-
-    position: sticky;
-    top: 5px;
-    z-index: 100;
-    background-color: #f0f0f0;
-
-    .logo {
-        width: 100px;
-        height: auto;
-    }
-
-    nav {
-        width: 100%;
-
-        &.mobile {
-            display: none;
-        }
-
-        ul {
-            /*display: flex;
-            justify-content: space-evenly;
-            align-items: flex-start;*/
-            @include miFlex(row, space-evenly, flex-start);
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            background-color: aliceblue;
-        }
-
-    }
-}
-
-main {
-    text-align: center;
-
-    &#fondoPrincipal {
-        // & + # porque es un ID
-        background-color: whitesmoke;
-
-        .hielos {
-            color: black;
-            text-align: center;
-            font-size: 50px;
-            font-weight: 500;
-        }
-
-        .heroSection {
-            // heroSection está dentro de main#fondoPrincipal
-            background-image: url(../assets/img/Bolsa\ hielo\ fresco.jpg);
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 100px;
-            padding: 145px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-
-            .heroTxt {
-                // ← AQUÍ va anidado
-                background-color: blanchedalmond;
-            }
-        }
-    }
-
-}
-
-section.productos .intro {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-section.productos .intro .introText {
-    width: 40%;
-}
-
-section.productos .intro .introText h2 {
-    text-align: center;
-}
-
-section.productos .intro .imagen {
-    width: 40%;
-}
-
-/*  SECCIÓN BENEFICIOS  */
-section.beneficios {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    gap: 20px;
-    text-align: left;
-}
-
-section.beneficios ul {
-    list-style: none;
-    padding: 0;
-    font-size: 10px;
-}
-
-section.beneficios li {
-    text-align: center;
-    margin-bottom: 5px;
-    font-size: 14px;
-}
-
-section.beneficios>img {
-    width: 150px;
-    height: auto;
-    border-radius: 10px;
-}
-
-.texto-beneficio {
-    max-width: 600px;
-}
-
-.titulo-beneficio {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.titulo-beneficio h2 {
-    font-size: 20px;
-    margin: 0;
-}
-
-.icono-beneficio {
-    width: 20px;
-    height: auto;
-}
-
-/*  GRID DE PRODUCTOS   */
-.gridArea {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-        "Bolsa_Hielo Hielo_Luz Hielo_Rolito"
-        "Vaso_Hielo Copa_Hielo Hielos_Corazon";
-    width: 100vw;
-    height: 100vh;
-    margin: 0 auto;
-    gap: 10px;
-    position: relative;
-    background-color: rgb(248, 231, 231);
-    padding: 10px;
-
-    img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        min-height: 0;
-    }
-
-    /* Grid Areas */
-    .BolsaHielo {
-        grid-area: Bolsa_Hielo;
-    }
-
-    .HieloRolito {
-        grid-area: Hielo_Rolito;
-    }
-
-    .VasoHielo {
-        grid-area: Vaso_Hielo;
-    }
-
-    .CopaHielo {
-        grid-area: Copa_Hielo;
-    }
-
-    .HielosCorazon {
-        grid-area: Hielos_Corazon;
-    }
-
-    .HieloLuz {
-        grid-area: Hielo_Luz;
-    }
-
-
-}
-
-
-
-
-/*  FOOTER  */
-footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #f0f0f0;
-
-    .footerRedes {
-        a {
-            margin: 0 15px;
-            transition: transform 0.3s ease;
-
-            &:hover {
-                transform: scale(1.1);
-            }
-
-            // Los iconos son los que heredan el extend
-            i {
-                @extend %icono-red;
-                
-                // Colores específicos por red social
-                &.fa-facebook {
-                    color: #1877F2;
-                }
-                
-                &.fa-instagram {
-                    color: #E1306C;
-                }
-                
-                &.fa-whatsapp {
-                    color: #25D366;
-                }
-            }
-        }
-    }
-}
-
-
-
-/*  BOTÓN FLOTANTE WHATSAPP  */
-.whatsapp-float {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25d366;
-    color: white;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.logo {
+    transition: transform 0.3s ease-in-out;
 
     &:hover {
-        background-color: #128c7e;
+        transform: rotate(360deg) scale(1.1);
+    }
+}
+
+
+.navbar-toggler {
+    border: none;
+    padding: 4px 8px;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.navbar-nav {
+    .nav-link {
         color: white;
-        transform: scale(1.1);
-        text-decoration: none;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin: 0 0.3rem;
+        padding: 0.75rem 1rem;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        &.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            font-weight: 600;
+        }
     }
 }
 
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+.navbar .logo {
+    max-height: 60px;
+    width: auto;
+}
+
+
+main {
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 2.5rem;
+        color: blue;
+        font-weight: bold;
     }
 
-    70% {
-        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    &.container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
 }
 
-@media screen and (max-width: 768px) {
 
-    /* Navegación móvil */
-    header {
-        nav {
+.img-fluid,
+.imagen,
+img {
+    max-width: 100%;
+    height: auto;
+}
 
-            &.desktop {
-                display: none;
-            }
-
-            &.mobile {
-                display: block;
-                text-align: center;
-            }
+.container {
+    padding: 0 15px;
+}
 
 
+footer {
+    background-color: #f0f0f0;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+
+.card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.card-img-top {
+    border-radius: 15px 15px 0 0;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+
+        img {
+            transform: scale(1.1);
         }
-
-
     }
 
-    /* Footer móvil */
-    footer {
+    img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+}
 
-        .footerMenu {
-            display: none;
+
+.form-control {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+
+    &:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+        transform: translateY(-2px);
+    }
+}
+
+
+.productos {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.beneficios {
+    background: linear-gradient(135deg, #2c5aa0, #87ceeb);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    color: white;
+    padding: 2rem;
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        transition: transform 0.3s ease;
+        color: #2c5aa0;
+
+        &:hover {
+            transform: translateX(10px);
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    main {
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
         }
     }
 
-    /* WhatsApp móvil */
-    .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 25px;
+    .card-title {
+        font-size: 1.3rem;
     }
 
-    /* Grid móvil */
-    .gridArea {
-        grid-template-columns: auto;
-        grid-template-rows: auto;
-        grid-template-areas:
-            "Bolsa_Hielo"
-            "Hielo_Luz"
-            "Hielo_Rolito"
-            "Vaso_Hielo"
-            "Copa_Hielo"
-            "Hielos_Corazon";
-        height: auto;
-        margin: 0 auto;
+    .introText h2,
+    .titulo-beneficio h2 {
+        font-size: 1.5rem;
     }
+
+    .navbar-nav .nav-link {
+        margin: 0.3rem 0;
+        text-align: center;
+        padding: 10px 15px;
+    }
+
+    .gallery-item img {
+        height: 200px;
+    }
+
+    .productos .imagen,
+    .beneficios img {
+        max-height: 250px;
+        margin: 1rem 0;
+    }
+
+    .productos,
+    .beneficios {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .card {
+        margin-bottom: 1.5rem;
+    }
+
+    .card-img-top {
+        height: 180px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    main h1 {
+        font-size: 1.7rem;
+    }
+
+    .introText h2,
+    .titulo-beneficio h2 {
+        font-size: 1.3rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    main.container {
+        padding: 1rem 10px;
+    }
+
+    .gallery-item img {
+        height: 180px;
+    }
+
+    .productos .imagen,
+    .beneficios img {
+        max-height: 200px;
+    }
+
+    .card-img-top {
+        height: 150px;
+    }
+
+    .productos,
+    .beneficios {
+        padding: 1rem;
+        border-radius: 15px;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    main h1 {
+        font-size: 1.5rem;
+    }
+
+    .navbar .logo {
+        max-height: 40px;
+    }
+
+    .beneficios li {
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .gridArea .col-lg-4 {
+        flex: 0 0 25% !important;
+        max-width: 25% !important;
+    }
+
+    .gallery-item img {
+        height: 300px !important;
+    }
+}
+
+#menu-toggle {
+    display: none;
 }
