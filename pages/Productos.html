@@ -1,72 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos - Hielos Fresco</title>
+
+    <!-- SEO -->
+    <title>Productos | Hielo Fresco - Hielo en Cubos y Más</title>
+    <meta name="description"
+        content="Descubre los productos de Hielo Fresco: hielo macizo en cubo en bolsas de 2kg, ideal para eventos, bebidas y comercios. Calidad, pureza y entrega rápida.">
+    
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
+
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="../index.html">
-                    <img class="logo" src="../assets/img/logo.png" alt="Logo Hielos Fresco">
+                    <img class="logo" src="../assets/img/logo.png" alt="Logo de Hielo Fresco - Venta de hielo">
                 </a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
+
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="../index.html">INICIO</a></li>
-                        <li class="nav-item"><a class="nav-link active subrayado" aria-current="page" href="Productos.html">PRODUCTOS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Servicios.html">SERVICIOS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Galeria.html">GALERÍA</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Contacto.html">CONTACTO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active subrayado" aria-current="page"
+                                href="Productos.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Servicios.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Galeria.html">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contacto.html">Contacto</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="container">
-        <h1>Nuestro Producto</h1>
-        
-        <section class="productos">
+
+    <main class="container my-5">
+
+        <h1 class="mb-4">Nuestros Productos</h1>
+
+        <section class="productos mb-5">
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="intro">
                         <div class="introText">
-                            <h2>Hielo macizo en Cubo</h2>
-                            <p>Bolsas de 2kg</p>
+                            <h2>Hielo macizo en cubo</h2>
+                            <p>Bolsas de 2kg, ideales para bebidas y eventos.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <img class="imagen" src="../assets/img/R.jpeg" alt="Bolsa de Hielo">
+                    <img class="imagen img-fluid rounded shadow" src="../assets/img/R.jpeg"
+                        alt="Bolsa de 2kg de hielo macizo en cubos">
                 </div>
             </div>
         </section>
 
         <section class="beneficios">
-            <div class="row align-items-center text-center d-flex justify-content-center align-items-center ">
+            <div class="row align-items-center text-center justify-content-center">
                 <div class="col-lg-6 order-lg-2">
-                    <img src="../assets/img/img_hielo.hd_-1.jpg" alt="Vaso con hielos">
+                    <img src="../assets/img/img_hielo.hd_-1.jpg" alt="Vaso con hielos cristalinos servido en bebida"
+                        class="img-fluid rounded shadow">
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="texto-beneficio relative">
-                        <div class="titulo-beneficio">
-                            <img src="../assets/img/pregunta_de_hielo.png.avif" class="icono-beneficio" alt="icono signo de pregunta">
-                            <h2>¿Por qué elegir nuestro hielo?</h2>
+                        <div class="titulo-beneficio d-flex align-items-center justify-content-center mb-3">
+                            <img src="../assets/img/pregunta_de_hielo.png.avif" class="icono-beneficio me-2"
+                                alt="Ícono signo de pregunta sobre hielo">
+                            <h2 class="mb-0">¿Por qué elegir nuestro hielo?</h2>
                         </div>
-                        <ul>
+                        <ul class="list-unstyled fs-5">
                             <li>❄️ Se mantiene sólido por más tiempo</li>
                             <li>🚚 Entrega rápida a domicilio</li>
-                            <li>💧 Agua purificada</li>
+                            <li>💧 Elaborado con agua purificada</li>
                             <li>🥂 Ideal para eventos y bebidas</li>
                         </ul>
                     </div>
@@ -75,10 +92,13 @@
         </section>
     </main>
 
-    <footer>
-        <p>© 2025 Hielos Fresco - Todos los derechos reservados</p>
+
+    <footer class="bg-light text-center py-4 mt-5">
+        <p class="mb-0">© 2025 Hielo Fresco - Todos los derechos reservados</p>
     </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

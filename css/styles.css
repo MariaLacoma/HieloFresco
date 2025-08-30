@@ -88,7 +88,7 @@ ul {
     align-items: flex-start;
     padding: 0;
     margin: 0;
-    background-color: aliceblue;
+    background-color: white;
 }
 
 .logo {
@@ -445,7 +445,7 @@ footer {
 }
 
 .navbar-nav .nav-link {
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -597,7 +597,7 @@ footer {
     font-size: 1.1rem;
     margin-bottom: 1rem;
     padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(248, 248, 248, 0.2);
     transition: transform 0.3s ease;
     color: #2c5aa0
 }
