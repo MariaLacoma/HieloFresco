@@ -1,314 +1,343 @@
 
 
 
-.logo {
-    transition: transform 0.3s ease-in-out;
+/*  VARIABLES*/
+$color-principal: #007bff;
+$color-secundario: #0056b3;
+$color-texto: #2c5aa0;
+$color-gris: #f0f0f0;
+$color-borde: #e9ecef;
 
-    &:hover {
-        transform: rotate(360deg) scale(1.1);
-    }
+// Tipografía
+$fuente-principal: 'Poppins', sans-serif;
+
+// Bordes y espaciado
+$radio-borde: 10px;
+$radio-card: 15px;
+$radio-box: 20px;
+
+
+/* MIXINS */
+@mixin borde-suave($radio: $radio-borde) {
+  border-radius: $radio;
+  transition: all 0.3s ease;
+}
+
+@mixin sombra-suave($nivel: 0.1) {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, $nivel);
 }
 
 
-.navbar-toggler {
-    border: none;
-    padding: 4px 8px;
+/* EXTEND PLACEHOLDER*/
+%btn-base {
+  font-family: $fuente-principal;
+  padding: 12px 30px;
+  font-weight: 600;
+  @include borde-suave($radio-borde);
+  cursor: pointer;
+  border: none;
+}
 
-    &:focus {
-        box-shadow: none;
-    }
+
+/*  TUS ESTILOS (mejorados)*/
+
+.logo {
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: rotate(360deg) scale(1.1);
+  }
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 4px 8px;
+
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 .navbar-nav {
-    .nav-link {
-        color: white;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin: 0 0.3rem;
-        padding: 0.75rem 1rem;
-        border-radius: 5px;
-        transition: all 0.3s ease;
+  .nav-link {
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0.3rem;
+    padding: 0.75rem 1rem;
+    @include borde-suave(5px);
 
-        &:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-1px);
-        }
-
-        &.active {
-            background-color: rgba(255, 255, 255, 0.2);
-            font-weight: 600;
-        }
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
     }
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.2);
+      font-weight: 600;
+    }
+  }
 }
 
 .navbar .logo {
-    max-height: 60px;
-    width: auto;
+  max-height: 60px;
+  width: auto;
 }
-
 
 main {
-    h1 {
-        font-size: 2.5rem;
-        text-align: center;
-        margin-bottom: 2.5rem;
-        color: blue;
-        font-weight: bold;
-    }
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: $color-principal;
+    font-weight: bold;
+  }
 
-    &.container {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
+  &.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
-
 
 .img-fluid,
 .imagen,
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
-    padding: 0 15px;
+  padding: 0 15px;
 }
-
 
 footer {
-    background-color: #f0f0f0;
-    padding: 2rem 0;
-    text-align: center;
-    margin-top: 3rem;
+  background-color: $color-gris;
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 3rem;
 }
 
-
 .card {
-    border: none;
-    border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  @include borde-suave($radio-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
+  &:hover {
+    transform: translateY(-5px);
+    @include sombra-suave(0.15);
+  }
 }
 
 .card-img-top {
-    border-radius: 15px 15px 0 0;
+  border-radius: $radio-card $radio-card 0 0;
 }
 
 .gallery-item {
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+  overflow: hidden;
+  @include borde-suave($radio-card);
+  @include sombra-suave(0.1);
+  transition: transform 0.3s ease;
 
-    &:hover {
-        transform: scale(1.05);
-
-        img {
-            transform: scale(1.1);
-        }
-    }
+  &:hover {
+    transform: scale(1.05);
 
     img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        transition: transform 0.3s ease;
+      transform: scale(1.1);
     }
+  }
+
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
 }
 
-
 .form-control {
-    border-radius: 10px;
-    border: 2px solid #e9ecef;
-    padding: 12px 15px;
-    transition: all 0.3s ease;
+  @include borde-suave($radio-borde);
+  border: 2px solid $color-borde;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
 
-    &:focus {
-        border-color: #007bff;
-        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
+  &:focus {
+    border-color: $color-principal;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
 }
 
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    border-radius: 10px;
-    padding: 12px 30px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+  @extend %btn-base;
+  background-color: $color-principal;
+  border: 1px solid $color-principal;
 
-    &:hover {
-        background-color: #0056b3;
-        border-color: #0056b3;
-        transform: translateY(-2px);
-    }
+  &:hover {
+    background-color: $color-secundario;
+    border-color: $color-secundario;
+    transform: translateY(-2px);
+  }
 }
 
-
 .productos {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    margin-bottom: 3rem;
+  background: white;
+  @include borde-suave($radio-box);
+  @include sombra-suave(0.1);
+  padding: 2rem;
+  margin-bottom: 3rem;
 }
 
 .beneficios {
-    background: linear-gradient(135deg, #2c5aa0, #87ceeb);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    color: white;
-    padding: 2rem;
+  background: linear-gradient(135deg, $color-texto, #87ceeb);
+  @include borde-suave($radio-box);
+  @include sombra-suave(0.1);
+  color: white;
+  padding: 2rem;
 
-    ul {
-        list-style: none;
-        padding: 0;
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+    color: $color-texto;
+
+    &:hover {
+      transform: translateX(10px);
     }
-
-    li {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-        padding: 0.5rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        transition: transform 0.3s ease;
-        color: #2c5aa0;
-
-        &:hover {
-            transform: translateX(10px);
-        }
-    }
+  }
 }
 
 
+/*  MEDIA QUERIES */
 @media (max-width: 768px) {
-    main {
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
+  main {
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
     }
+  }
 
-    .card-title {
-        font-size: 1.3rem;
-    }
+  .card-title {
+    font-size: 1.3rem;
+  }
 
-    .introText h2,
-    .titulo-beneficio h2 {
-        font-size: 1.5rem;
-    }
+  .introText h2,
+  .titulo-beneficio h2 {
+    font-size: 1.5rem;
+  }
 
-    .navbar-nav .nav-link {
-        margin: 0.3rem 0;
-        text-align: center;
-        padding: 10px 15px;
-    }
+  .navbar-nav .nav-link {
+    margin: 0.3rem 0;
+    text-align: center;
+    padding: 10px 15px;
+  }
 
-    .gallery-item img {
-        height: 200px;
-    }
+  .gallery-item img {
+    height: 200px;
+  }
 
-    .productos .imagen,
-    .beneficios img {
-        max-height: 250px;
-        margin: 1rem 0;
-    }
+  .productos .imagen,
+  .beneficios img {
+    max-height: 250px;
+    margin: 1rem 0;
+  }
 
-    .productos,
-    .beneficios {
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-    }
+  .productos,
+  .beneficios {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
 
-    .card {
-        margin-bottom: 1.5rem;
-    }
+  .card {
+    margin-bottom: 1.5rem;
+  }
 
-    .card-img-top {
-        height: 180px;
-    }
+  .card-img-top {
+    height: 180px;
+  }
 }
-
 
 @media (max-width: 576px) {
-    main h1 {
-        font-size: 1.7rem;
-    }
+  main h1 {
+    font-size: 1.7rem;
+  }
 
-    .introText h2,
-    .titulo-beneficio h2 {
-        font-size: 1.3rem;
-    }
+  .introText h2,
+  .titulo-beneficio h2 {
+    font-size: 1.3rem;
+  }
 
-    .card-title {
-        font-size: 1.2rem;
-    }
+  .card-title {
+    font-size: 1.2rem;
+  }
 
-    .container {
-        padding: 0 10px;
-    }
+  .container {
+    padding: 0 10px;
+  }
 
-    main.container {
-        padding: 1rem 10px;
-    }
+  main.container {
+    padding: 1rem 10px;
+  }
 
-    .gallery-item img {
-        height: 180px;
-    }
+  .gallery-item img {
+    height: 180px;
+  }
 
-    .productos .imagen,
-    .beneficios img {
-        max-height: 200px;
-    }
+  .productos .imagen,
+  .beneficios img {
+    max-height: 200px;
+  }
 
-    .card-img-top {
-        height: 150px;
-    }
+  .card-img-top {
+    height: 150px;
+  }
 
-    .productos,
-    .beneficios {
-        padding: 1rem;
-        border-radius: 15px;
-    }
+  .productos,
+  .beneficios {
+    padding: 1rem;
+    border-radius: 15px;
+  }
 
-    .btn-primary {
-        padding: 10px 20px;
-    }
+  .btn-primary {
+    padding: 10px 20px;
+  }
 }
 
 @media (max-width: 480px) {
-    main h1 {
-        font-size: 1.5rem;
-    }
+  main h1 {
+    font-size: 1.5rem;
+  }
 
-    .navbar .logo {
-        max-height: 40px;
-    }
+  .navbar .logo {
+    max-height: 40px;
+  }
 
-    .beneficios li {
-        font-size: 0.95rem;
-    }
+  .beneficios li {
+    font-size: 0.95rem;
+  }
 }
 
 @media (min-width: 992px) {
-    .gridArea .col-lg-4 {
-        flex: 0 0 25% !important;
-        max-width: 25% !important;
-    }
+  .gridArea .col-lg-4 {
+    flex: 0 0 25% !important;
+    max-width: 25% !important;
+  }
 
-    .gallery-item img {
-        height: 300px !important;
-    }
+  .gallery-item img {
+    height: 300px !important;
+  }
 }
 
 #menu-toggle {
-    display: none;
+  display: none;
 }
